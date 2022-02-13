@@ -56,4 +56,7 @@ with open(f"{directory}\\docs\\index.md", "r") as f:
             "</body>")] + INJECT_SCRIPT + content[content.index("</body>"):]
         f2.write(content)
 
+# delete the index.md file
+subprocess.call(f"cd \"{directory}\\docs\" && del index.md", shell=True)
+
 print(sys.argv)
